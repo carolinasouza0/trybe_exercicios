@@ -1,17 +1,55 @@
-h1,
-p {
-  text-align: center;
+div:hover {
+  border: 2px solid black;
 }
 
-div li:hover {
-  background-color: rgba(211, 78, 11, 0.664);
+div:nth-of-type(1) {
+  background-color: rgba(233, 7, 30, 0.753);
+}
+div:nth-of-type(2) {
+  background-color: rgba(235, 157, 11, 0.719);
+}
+div:nth-of-type(3) {
+  background-color: rgba(248, 166, 89, 0.692);
+}
+div:nth-of-type(4) {
+  background-color: rgba(102, 28, 102, 0.685);
+}
+div:nth-of-type(5) {
+  background-color: rgba(214, 130, 207, 0.699);
+}
+div:nth-of-type(1) > h3 {
+  color: rgba(58, 38, 40, 0.75);
+  font-size: 18px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+div:nth-of-type(2) > h3 {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 18px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+div:nth-of-type(3) > h3 {
+  color: rgba(42, 114, 32, 0.75);
+  font-size: 18px;
+  font-family: fantasy;
+}
+div:nth-of-type(4) > h3 {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 18px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+div:nth-of-type(5) > h3 {
+  color: rgba(29, 28, 80, 0.75);
+  font-size: 18px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+div:nth-of-type(3) {
+  height: 100px;
 }
 
-div a:active {
-  color: white;
-}
-
-ol,
-ul {
-  list-style: none;
+div:nth-child(odd) h3 {
+  font-style: italic;
 }
