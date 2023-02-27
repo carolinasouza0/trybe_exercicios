@@ -1,9 +1,13 @@
-let number1 = 4;
-let number2 = 0;
-let number3 = 1;
+let valorCusto = -1;
+let valorVenda = 0;
+let impostoSobreCusto = (20 * valorCusto) / 100;
+let valorCustoTotal;
+let lucro;
 
-if (number1 % 2 != 0 || number2 % 2 != 0 || number3 % 2 != 0) {
-  console.log("true");
+if (valorCusto >= 0 && valorVenda >= 0) {
+  valorCustoTotal = valorCusto + impostoSobreCusto;
+  lucro = (valorVenda - valorCustoTotal) * 1000;
+  console.log("o lucro total da empresa ao vender mil produtos é", lucro);
 } else {
-  console.log("false");
+  console.log("Erro. Valores incorretos.");
 }
