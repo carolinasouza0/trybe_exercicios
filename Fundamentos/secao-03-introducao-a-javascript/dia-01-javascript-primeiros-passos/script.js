@@ -1,18 +1,10 @@
-let statusCandidato = "lista";
+let numero1 = 5;
+let numero2 = 5;
 
-switch (statusCandidato) {
-  case "aprovada":
-    console.log("Parabéns, você está no grupo de pessoas aprovadas!");
-    break;
-
-  case "lista":
-    console.log("Você está na nossa lista de espera");
-    break;
-
-  case "reprovada":
-    console.log("Infelizmente, você reprovou");
-    break;
-
-  default:
-    console.log("Informação incorreta.");
+if (numero1 > numero2) {
+  console.log(numero1, "é maior que", numero2);
+} else if (numero2 > numero1) {
+  console.log(numero2, "é maior que", numero1);
+} else {
+  console.log(numero1, "é igual a", numero2);
 }
