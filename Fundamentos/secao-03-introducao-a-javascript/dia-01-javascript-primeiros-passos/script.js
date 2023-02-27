@@ -1,24 +1,17 @@
-let chess = "Rook".toLowerCase();
+let grade = 85;
 
-switch (chess) {
-  case "pawn":
-    console.log("move forward");
-    break;
-  case "bishop":
-    console.log("move diagonally");
-    break;
-  case "knight":
-    console.log("move horizontally and vertically");
-    break;
-  case "rook":
-    console.log("as many squares as it likes horizontally and vertically");
-    break;
-  case "queen":
-    console.log("as many squares as it likes horizontally and vertically");
-    break;
-  case "king":
-    console.log("one square in any direction");
-    break;
-  default:
-    console.log("Error. Invalid piece.");
+if (grade >= 90) {
+  console.log("A");
+} else if (grade >= 80 && grade < 90) {
+  console.log("B");
+} else if (grade >= 70 && grade < 80) {
+  console.log("C");
+} else if (grade >= 60 && grade < 70) {
+  console.log("D");
+} else if (grade >= 50 && grade < 60) {
+  console.log("E");
+} else if (grade >= 0 && grade < 50) {
+  console.log("F");
+} else {
+  console.log("Error. Wrong percentage");
 }
