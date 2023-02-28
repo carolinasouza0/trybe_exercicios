@@ -1,13 +1,9 @@
-let numbers = [2, 4, 6, 8, 70, 8, 100, 2, 30, 26];
-let numerosImpares = 0;
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let smallNumber = numbers[0];
 
 for (let index = 0; index < numbers.length; index += 1) {
-  if (numbers[index] % 2 !== 0) {
-    numerosImpares += 1;
+  if (numbers[index] < smallNumber) {
+    smallNumber = numbers[index];
   }
 }
-if (numerosImpares === 0) {
-  console.log("Nenhum valor ímpar encontrado");
-} else {
-  console.log(numerosImpares);
-}
+console.log(smallNumber);
