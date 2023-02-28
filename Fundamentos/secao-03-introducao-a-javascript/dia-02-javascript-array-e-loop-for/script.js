@@ -1,5 +1,8 @@
-let names = ["João", "Maria", "Antônio", "Margarida"];
+let d1 = Math.ceil(Math.random() * 6);
+console.log("resultado d1:", d1);
+let d2 = Math.ceil(Math.random() * 6);
 
-for (let name of names) {
-  console.log(name);
+while (d1 !== d2) {
+  d2 = Math.ceil(Math.random() * 6);
+  console.log("resultado d2:", d2);
 }
