@@ -1,7 +1,5 @@
-let factorial = 1;
+let word = "carolina";
 
-for (let index = 10; index > 0; index -= 1) {
-  factorial *= index;
+for (let index = word.length - 1; index >= 0; index -= 1) {
+  console.log(word[index]);
 }
-
-console.log(factorial);
