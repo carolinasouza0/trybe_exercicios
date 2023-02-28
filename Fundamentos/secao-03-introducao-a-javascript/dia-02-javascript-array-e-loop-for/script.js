@@ -1,8 +1,7 @@
-let d1 = Math.ceil(Math.random() * 6);
-console.log("resultado d1:", d1);
-let d2 = Math.ceil(Math.random() * 6);
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let sum = 0;
 
-while (d1 !== d2) {
-  d2 = Math.ceil(Math.random() * 6);
-  console.log("resultado d2:", d2);
+for (let index = 0; index < numbers.length; index += 1) {
+  sum += numbers[index];
 }
+console.log(sum);
