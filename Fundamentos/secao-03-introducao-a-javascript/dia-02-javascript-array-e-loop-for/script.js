@@ -1,9 +1,7 @@
-let numbers = [];
-let numbersDivision = [];
+let factorial = 1;
 
-for (let index = 1; index < 25; index += 1) {
-  numbers.push(index);
-  numbersDivision.push(index / 2);
+for (let index = 10; index > 0; index -= 1) {
+  factorial *= index;
 }
 
-console.log(numbersDivision);
+console.log(factorial);
