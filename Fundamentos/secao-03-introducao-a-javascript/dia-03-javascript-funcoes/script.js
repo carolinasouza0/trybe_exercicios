@@ -1,11 +1,11 @@
 let clientesTrybeBank = ["Ada", "John", "Gus"];
 
-function adicionaClientes(nome) {
-  if (typeof nome !== "string") {
+function removeClientes(nome) {
+  if (typeof nome !== "string" && !clientesTrybeBank.includes(nome)) {
     console.log("Erro. É preciso digitar um nome.");
   } else {
-    clientesTrybeBank.push(nome);
+    clientesTrybeBank.splice(clientesTrybeBank.indexOf(nome), 1);
     console.log(clientesTrybeBank);
   }
 }
-adicionaClientes("Victor");
+removeClientes("Gus");
