@@ -1,11 +1,33 @@
 let clientesTrybeBank = ["Ada", "John", "Gus"];
 
-function removeClientes(nome) {
-  if (typeof nome !== "string" && !clientesTrybeBank.includes(nome)) {
-    console.log("Erro. É preciso digitar um nome.");
+function verificaTipoCliente(cliente) {
+  if (typeof cliente !== "string") {
+    return 'O parâmetro passado deve ser do tipo "string"!';
   } else {
-    clientesTrybeBank.splice(clientesTrybeBank.indexOf(nome), 1);
-    console.log(clientesTrybeBank);
+    return true;
   }
 }
-removeClientes("Gus");
+
+function verificaCliente(cliente) {
+  for (let index = 0; index < clientesTrybeBank.length; index += 1) {
+    if (cliente === clientesTrybeBank[index]) {
+      return index;
+    }
+  }
+  return false;
+}
+
+function removeCliente(cliente) {
+  let validacao = verificaTipoCliente(cliente);
+  if (validacao !== true) {
+    return validacao;
+  }
+  let index = verificaCliente(cliente);
+  if (index === false) {
+    return "Cliente não encontrada (o)";
+  }
+  clientesTrybeBank.splice(index, 1);
+  return "Cliente excluida(o) com sucesso.";
+}
+
+console.log(removeCliente(25));
