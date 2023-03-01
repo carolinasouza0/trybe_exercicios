@@ -1,22 +1,33 @@
-let saldo = 200;
+let clientesTrybeBank = ["Ada", "John", "Gus"];
 
-function adicionaSaldo(valor) {
-  return valor + saldo;
+function verificaTipoCliente(cliente) {
+  if (typeof cliente !== "string") {
+    return 'O parâmetro passado deve ser do tipo "string"!';
+  } else {
+    return true;
+  }
 }
 
-function subtraiSaldo(valor) {
-  return saldo - valor;
+function verificaCliente(cliente) {
+  for (let index = 0; index < clientesTrybeBank.length; index += 1) {
+    if (cliente === clientesTrybeBank[index]) {
+      return index;
+    }
+  }
+  return false;
 }
 
-function multiplicaSaldo(valor) {
-  return valor * saldo;
+function removeCliente(cliente) {
+  let validacao = verificaTipoCliente(cliente);
+  if (validacao !== true) {
+    return validacao;
+  }
+  let index = verificaCliente(cliente);
+  if (index === false) {
+    return "Cliente não encontrada (o)";
+  }
+  clientesTrybeBank.splice(index, 1);
+  return "Cliente excluida(o) com sucesso.";
 }
 
-function divideSaldo(valor) {
-  return valor / saldo;
-}
-
-console.log(adicionaSaldo(500));
-console.log(subtraiSaldo(50));
-console.log(multiplicaSaldo(5));
-console.log(divideSaldo(50));
+console.log(removeCliente(25));
