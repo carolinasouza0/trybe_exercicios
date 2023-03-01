@@ -1,22 +1,11 @@
-let saldo = 200;
+let clientesTrybeBank = ["Ada", "John", "Gus"];
 
-function adicionaSaldo(valor) {
-  return valor + saldo;
+function adicionaClientes(nome) {
+  if (typeof nome !== "string") {
+    console.log("Erro. É preciso digitar um nome.");
+  } else {
+    clientesTrybeBank.push(nome);
+    console.log(clientesTrybeBank);
+  }
 }
-
-function subtraiSaldo(valor) {
-  return saldo - valor;
-}
-
-function multiplicaSaldo(valor) {
-  return valor * saldo;
-}
-
-function divideSaldo(valor) {
-  return valor / saldo;
-}
-
-console.log(adicionaSaldo(500));
-console.log(subtraiSaldo(50));
-console.log(multiplicaSaldo(5));
-console.log(divideSaldo(50));
+adicionaClientes("Victor");
