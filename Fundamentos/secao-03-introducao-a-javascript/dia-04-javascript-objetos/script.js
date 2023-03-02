@@ -1,14 +1,25 @@
-let countries = {
-  franca: "Paris",
-  brasil: "Brasília",
-  espanha: "Madrid",
-  portugal: "Lisboa",
+let person = {
+  name: "Roberto",
 };
-let pairKeyValue = Object.entries(countries);
-console.log(pairKeyValue);
 
-for (index in pairKeyValue) {
-  console.log("--------");
-  console.log("País:", pairKeyValue[index][0]);
-  console.log("Capital:", pairKeyValue[index][1]);
-}
+let lastName = {
+  lastName: "Silva",
+};
+
+let clone = Object.assign(person, lastName);
+
+console.log(clone); // { name: 'Roberto', lastName: 'Silva' }
+console.log(person); // { name: 'Roberto', lastName: 'Silva' }
+
+clone.name = "Maria";
+
+console.log("Mudando a propriedade name através do objeto clone");
+console.log(clone); // Output: { name: 'Maria', lastName: 'Silva' }
+console.log(person); // Output: { name: 'Maria', lastName: 'Silva' }
+console.log("--------------");
+
+person.lastName = "Ferreira";
+
+console.log("Mudando a propriedade lastName através do objeto person");
+console.log(clone); // Output: { name: 'Maria', lastName: 'Ferreira' }
+console.log(person); // Output: { name: 'Maria', lastName: 'Ferreira' }
