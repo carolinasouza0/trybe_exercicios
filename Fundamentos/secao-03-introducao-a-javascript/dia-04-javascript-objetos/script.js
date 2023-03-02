@@ -1,9 +1,15 @@
-let names = {
-  person1: "João",
-  person2: "Maria",
-  person3: "Jorge",
+let customer = {
+  firstName: "Roberto",
+  age: 22,
+  job: "Teacher",
 };
 
-for (let index in names) {
-  console.log("Olá, " + names[index]);
+let newKey = "lastName";
+let lastName = "Ferreira";
+
+function addProperty(object, key, value) {
+  object[key] = value;
 }
+
+addProperty(customer, newKey, lastName);
+console.log(customer);
