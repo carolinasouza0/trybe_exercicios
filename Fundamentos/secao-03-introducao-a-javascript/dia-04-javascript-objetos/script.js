@@ -1,29 +1,25 @@
-let student1 = {
+let student = {
   html: "Muito Bom",
   css: "Bom",
   javascript: "Ótimo",
-  softskills: "Ótimo",
+  softskill: "Ótimo",
 };
 
-let student2 = {
-  html: "Bom",
-  css: "Ótimo",
-  javascript: "Ruim",
-  softskills: "Ótimo",
-  git: "Bom", // chave adicionada
-};
-
-function listSkills(student) {
-  let arrayOfSkills = Object.keys(student);
-  for (let index in arrayOfSkills) {
-    console.log(
-      arrayOfSkills[index] + ", Nível: " + student[arrayOfSkills[index]]
-    );
+function listSkillsValuesWithFor(student) {
+  let skills = [];
+  for (skill in student) {
+    skills.push(student[skill]);
   }
+
+  return skills;
 }
 
-console.log("Estudante 1");
-listSkills(student1);
+function listSkillsValuesWithValues(student) {
+  return Object.values(student);
+}
 
-console.log("Estudante 2");
-listSkills(student2);
+// Sem Object.values
+console.log(listSkillsValuesWithFor(student));
+
+// Com Object.values
+console.log(listSkillsValuesWithValues(student));
