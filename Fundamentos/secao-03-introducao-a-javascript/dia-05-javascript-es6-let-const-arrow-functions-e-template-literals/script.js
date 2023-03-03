@@ -1,6 +1,6 @@
-let speed = 90;
-const speedCar = (speed) =>
-  speed >= 120
-    ? "Você ultrapassou o limite de velocidade"
-    : "Você está na velocidade permitida";
-console.log(speedCar(speed));
+const ligarDesligar = (status) => {
+  status === "desligado" ? (status = "Engines On") : (status = "Engines Off");
+  return status;
+};
+
+console.log(ligarDesligar("ligado"));
