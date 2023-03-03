@@ -1,83 +1,46 @@
-let order = {
-  name: "Rafael Andrade",
-  phoneNumber: "11-98763-1416",
-  address: {
-    street: "Rua das Flores",
-    number: "389",
-    apartment: "701",
-  },
-  order: {
-    pizza: {
-      marguerita: {
-        amount: 1,
-        price: 25,
-      },
-      pepperoni: {
-        amount: 1,
-        price: 20,
-      },
-    },
-    drinks: {
-      coke: {
-        type: "Coca-Cola Zero",
-        price: 10,
-        amount: 1,
-      },
-    },
-    delivery: {
-      deliveryPerson: "Ana Silveira",
-      price: 5,
-    },
-  },
-  payment: {
-    total: 60,
-  },
+let lesson1 = {
+  materia: "Matemática",
+  numeroEstudantes: 20,
+  professor: "Maria Clara",
+  turno: "manhã",
 };
 
-function customerInfo(order) {
-  let deliveryPerson = order.order.delivery.deliveryPerson;
-  let customer = order.name;
-  let phoneNumber = order.phoneNumber;
-  let street = order.address.street;
-  let number = order.address.number;
-  let apt = order.address.apartment;
+let lesson2 = {
+  materia: "História",
+  numeroEstudantes: 20,
+  professor: "Carlos",
+};
 
-  console.log(
-    "Olá, " +
-      deliveryPerson +
-      ", entrega para: " +
-      customer +
-      ", Telefone: " +
-      phoneNumber +
-      ", " +
-      street +
-      ", Nº: " +
-      number +
-      ", AP: " +
-      apt
-  );
+let lesson3 = {
+  materia: "Matemática",
+  numeroEstudantes: 10,
+  professor: "Maria Clara",
+  turno: "noite",
+};
+
+function nightShift(obj, key, value) {
+  obj[key] = value;
 }
+nightShift(lesson2, "turno", "noite");
+console.log(lesson2);
 
-customerInfo(order);
-
-function orderModifier(order) {
-  order.name = "Luiz Silva";
-  order.payment.total = "50,00";
-  let customer = order.name;
-  let pizzas = Object.keys(order.order.pizza);
-  let drinks = order.order.drinks.coke.type;
-  let newTotal = order.payment.total;
-
-  console.log(
-    "Olá " +
-      customer +
-      ", o total do seu pedido de " +
-      pizzas[0] +
-      ", " +
-      pizzas[1] +
-      " é R$ " +
-      newTotal
-  );
+function keyList(obj) {
+  return Object.keys(obj);
 }
+console.log(keyList(lesson1));
 
-orderModifier(order);
+function objectSize(obj) {
+  return Object.keys(obj).length;
+}
+console.log(objectSize(lesson1));
+
+function objectValues(obj) {
+  return Object.values(obj);
+}
+console.log(objectValues(lesson1));
+
+let allLessons = Object.assign(
+  {},
+  { lesson1: lesson1, lesson2: lesson2, lesson3: lesson3 }
+);
+console.log(allLessons);
