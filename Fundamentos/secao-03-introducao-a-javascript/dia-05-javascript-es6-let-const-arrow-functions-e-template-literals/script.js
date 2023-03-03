@@ -1,5 +1,6 @@
-const numeroAleatorio = () => {
-  return Math.random();
+const nomeCompleto = (nome, sobrenome) => {
+  return `${nome} ${sobrenome}`;
 };
-
-console.log(numeroAleatorio());
+let nome = "Ivan";
+let sobrenome = "Pires";
+console.log(nomeCompleto(nome, sobrenome));
