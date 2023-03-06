@@ -1,20 +1,18 @@
-const romanAlgarism = (string) => {
-  const splitAlgarism = string.split("");
-
-  const roman = {
-    I: 1,
-    V: 5,
-    X: 10,
-    L: 50,
-    C: 100,
-    D: 500,
-    M: 1000,
-  };
-  const number = splitAlgarism.map((numeral) => roman[numeral]);
-
-  return number.reduceRight((ac, current, index, array) => {
-    return current < array[index + 1] ? ac - current : ac + current;
-  });
+const arrayOfNumbers = (vector) => {
+  let newArray = [];
+  let newVector = vector.flat();
+  for (let index = 0; index < newVector.length; index += 1) {
+    if (newVector[index] % 2 === 0) {
+      newArray.push(newVector[index]);
+    }
+  }
+  return newArray.sort((a, b) => a - b);
 };
 
-console.log(romanAlgarism("MMXVIII"));
+let vector = [
+  [20, 2],
+  [3, 4, 5, 6],
+  [7, 8, 16, 10],
+];
+
+console.log(arrayOfNumbers(vector));
