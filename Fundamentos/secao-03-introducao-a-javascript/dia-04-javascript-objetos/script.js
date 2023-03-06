@@ -1,18 +1,39 @@
-const arrayOfNumbers = (vector) => {
-  let newArray = [];
-  let newVector = vector.flat();
-  for (let index = 0; index < newVector.length; index += 1) {
-    if (newVector[index] % 2 === 0) {
-      newArray.push(newVector[index]);
-    }
-  }
-  return newArray.sort((a, b) => a - b);
-};
-
-let vector = [
-  [20, 2],
-  [3, 4, 5, 6],
-  [7, 8, 16, 10],
+let basket = [
+  "Melancia",
+  "Abacate",
+  "Melancia",
+  "Melancia",
+  "Uva",
+  "Laranja",
+  "Jaca",
+  "Pera",
+  "Melancia",
+  "Uva",
+  "Laranja",
+  "Melancia",
 ];
 
-console.log(arrayOfNumbers(vector));
+let iquals = 1;
+let newObject = {};
+let fruit = "";
+for (let index = 0; index < basket.length; index += 1) {
+  if (basket.indexOf(basket[index]) !== index) {
+    fruit = basket[index];
+    iquals += 1;
+    newObject[fruit] = iquals;
+  } else {
+    newObject[basket[index]] = 1;
+  }
+}
+
+let summaries = [];
+
+for (let index in newObject) {
+  let message = `${newObject[index]} ${index}`;
+  if (newObject[index] > 1) {
+    message += "s";
+  }
+  summaries.push(message);
+}
+
+console.log(`Sua cesta possui: ${summaries.join(", ")}.`);
