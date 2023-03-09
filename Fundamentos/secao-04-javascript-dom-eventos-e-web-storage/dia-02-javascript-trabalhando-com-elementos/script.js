@@ -1,21 +1,26 @@
-let pai = document.getElementById("elementoOndeVoceEsta");
-pai.parentNode.style.color = "green";
+const pai = document.getElementById("pai");
+const secondChild = document.getElementById("elementoOndeVoceEsta");
+const primeiroFilhoDoElemento = secondChild.firstElementChild;
 
-pai.firstElementChild.innerHTML = "Hi I'm the first child";
+// Crie um irmão para elementoOndeVoceEsta.
 
-paiDoPai = document.getElementById("pai");
+const irmaoDeElemento = document.createElement("section");
+irmaoDeElemento.id = "irmaoElementoOndeVoceEsta";
+pai.appendChild(irmaoDeElemento);
 
-// Acesse o primeiroFilho a partir de pai.
-paiDoPai.firstElementChild;
+// Crie um filho para elementoOndeVoceEsta.
 
-// Acesse o primeiroFilho a partir de elementoOndeVoceEsta.
-pai.previousElementSibling;
+const filhoDoElemento = document.createElement("section");
+filhoDoElemento.id = "filhoDoElementoOndeVoceEsta";
+secondChild.appendChild(filhoDoElemento);
 
-// Acesse o texto Atenção! a partir de elementoOndeVoceEsta.
-pai.nextSibling;
+// Crie um filho para primeiroFilhoDoFilho.
 
-// Acesse o terceiroFilho a partir de elementoOndeVoceEsta.
-pai.nextElementSibling;
+const filhoDoFilhoDoElemento = document.createElement("section");
+filhoDoFilhoDoElemento.id = "filhoDoFilhoDoElementoOndeVoceEsta";
+primeiroFilhoDoElemento.appendChild(filhoDoFilhoDoElemento);
 
-// Acesse o terceiroFilho a partir de pai.
-paiDoPai.lastElementChild.previousElementSibling;
+// A partir desse filho criado, acesse terceiroFilho.
+
+const terceiroFilho =
+  filhoDoFilhoDoElemento.parentElement.parentElement.nextElementSibling;
