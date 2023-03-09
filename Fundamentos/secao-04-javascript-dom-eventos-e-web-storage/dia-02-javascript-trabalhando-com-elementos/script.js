@@ -55,4 +55,13 @@ for (let index = 1; index <= 3; index += 1) {
   const h3MainSons = document.createElement("h3");
   h3MainSons.innerHTML = "criação das h3 filhas da main";
   elementMain.appendChild(h3MainSons);
+  h3MainSons.className = "description";
 }
+
+elementH1.className = "title";
+elementMain.removeChild(elementSectionSecondSon);
+elementSectionThirdSon.style.cssText = "margin-right: auto";
+elementMain.style.backgroundColor = "purple";
+
+listSectionThirdSon.lastChild.remove();
+listSectionThirdSon.lastChild.remove();
