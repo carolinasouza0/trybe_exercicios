@@ -1,26 +1,58 @@
-const pai = document.getElementById("pai");
-const secondChild = document.getElementById("elementoOndeVoceEsta");
-const primeiroFilhoDoElemento = secondChild.firstElementChild;
+const elementH1 = document.createElement("h1");
+elementH1.innerText = "TrybeTrip - Agência de Viagens";
+document.body.appendChild(elementH1);
 
-// Crie um irmão para elementoOndeVoceEsta.
+const elementMain = document.createElement("main");
+elementMain.className = "main-content";
+document.body.appendChild(elementMain);
 
-const irmaoDeElemento = document.createElement("section");
-irmaoDeElemento.id = "irmaoElementoOndeVoceEsta";
-pai.appendChild(irmaoDeElemento);
+const elementSectionFirstSon = document.createElement("section");
+elementSectionFirstSon.className = "center-content";
+elementMain.appendChild(elementSectionFirstSon);
 
-// Crie um filho para elementoOndeVoceEsta.
+const elementPSectionSon = document.createElement("p");
+const elementP = document
+  .querySelector(".center-content")
+  .appendChild(elementPSectionSon);
+elementP.innerText =
+  "Welcome to our travel agency. Together we can get a really good discount in your dream vacation!";
 
-const filhoDoElemento = document.createElement("section");
-filhoDoElemento.id = "filhoDoElementoOndeVoceEsta";
-secondChild.appendChild(filhoDoElemento);
+const elementSectionSecondSon = document.createElement("section");
+elementSectionSecondSon.className = "left-content";
+elementMain.appendChild(elementSectionSecondSon);
 
-// Crie um filho para primeiroFilhoDoFilho.
+const elementSectionThirdSon = document.createElement("section");
+elementSectionThirdSon.className = "right-content";
+elementMain.appendChild(elementSectionThirdSon);
 
-const filhoDoFilhoDoElemento = document.createElement("section");
-filhoDoFilhoDoElemento.id = "filhoDoFilhoDoElementoOndeVoceEsta";
-primeiroFilhoDoElemento.appendChild(filhoDoFilhoDoElemento);
+const imgSectionSecondSon = document.createElement("img");
+imgSectionSecondSon.className = "small-image";
+imgSectionSecondSon.src = "https://picsum.photos/200";
+elementSectionSecondSon.appendChild(imgSectionSecondSon);
 
-// A partir desse filho criado, acesse terceiroFilho.
+const listSectionThirdSon = document.createElement("ul");
+elementSectionThirdSon.appendChild(listSectionThirdSon);
+const array = [
+  "Um",
+  "Dois",
+  "Três",
+  "Quatro",
+  "Cinco",
+  "Seis",
+  "Sete",
+  "Oito",
+  "Nove",
+  "Dez",
+];
 
-const terceiroFilho =
-  filhoDoFilhoDoElemento.parentElement.parentElement.nextElementSibling;
+for (let index in array) {
+  const liList = document.createElement("li");
+  liList.innerText = array[index];
+  listSectionThirdSon.appendChild(liList);
+}
+
+for (let index = 1; index <= 3; index += 1) {
+  const h3MainSons = document.createElement("h3");
+  h3MainSons.innerHTML = "criação das h3 filhas da main";
+  elementMain.appendChild(h3MainSons);
+}
