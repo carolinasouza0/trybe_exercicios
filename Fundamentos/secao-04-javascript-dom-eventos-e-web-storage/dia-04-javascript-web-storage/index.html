@@ -3,14 +3,64 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Leitor</title>
+
 </head>
 
 <body>
-  <h1>Dê uma olhada no seu console para checar os exemplos sendo impressos.<br />;)</h1>
-  <script src="script.js"></script>
+  <section class="preferences">
+    <section id="background-color" class="options">
+      <span>Cor de fundo</span>
+      <button id="white">white</button>
+      <button id="black">black</button>
+      <button id="green">green</button>
+      <button id="blue">blue</button>
+      <button id="yellow">yellow</button>
+    </section>
+    <section id="font-color" class="options">
+      <span>Cor da fonte</span>
+      <button id="fontBlack">black</button>
+      <button id="fontRed">red</button>
+      <button id="fontWhite">white</button>
+    </section>
+    <section id="font-size" class="options">
+      <span>Tamanho da fonte</span>
+      <button id="8pt">8pt</button>
+      <button id="10pt">10pt</button>
+      <button id="12pt">12pt</button>
+      <button id="14pt">14pt</button>
+      <button id="20pt">20pt</button>
+    </section>
+    <section id="line-height" class="options">
+      <span>Espaçamento entre as linhas</span>
+      <button id="spaceOne">1</button>
+      <button id="spaceNormal">normal</button>
+      <button id="spaceOneHalf">1.5</button>
+      <button id="spaceTwo">2.0</button>
+      <button id="spaceThree">3.0</button>
+    </section>
+    <section id="font-family" class="options">
+      <span>Tipo da fonte</span>
+      <button id="arial">Arial</button>
+      <button id="times">Times New Roman</button>
+    </section>
+  </section>
+  <main>
+    <section class="title">
+      <h1>Lorem Ipsum</h1>
+    </section>
+    <section class="description">
+      <h3>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</h3>
+    </section>
+    <article class="content">
+      <p class="paragraph">
+      </p>
+    </article>
+  </main>
+  <script src="/script.js"></script>
 </body>
 
 </html>
