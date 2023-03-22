@@ -11,6 +11,10 @@ html {
   box-sizing: inherit;
 }
 
+hr {
+  width: 80%;
+}
+
 header {
   border-radius: 7px;
   background-color: rgba(203, 178, 226, 0.712);
@@ -73,10 +77,12 @@ footer p {
     background-color: rgba(236, 172, 132, 0.712);
     display: flex;
   }
+
   .header-nav {
     display: flex;
     justify-content: center;
   }
+
   .header-nav li {
     margin-right: 55px;
   }
@@ -98,5 +104,36 @@ footer p {
 
   footer {
     background-color: rgba(236, 172, 132, 0.712);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  h3 {
+    color: rgba(30, 114, 49, 0.815);
+  }
+
+  header {
+    background-color: rgba(121, 206, 140, 0.815);
+  }
+
+  .header-nav {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .aside-one,
+  .aside-two {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 15px;
+  }
+
+  .aside-two ul {
+    width: 410px;
+  }
+
+  footer {
+    background-color: rgba(121, 206, 140, 0.815);
   }
 }
