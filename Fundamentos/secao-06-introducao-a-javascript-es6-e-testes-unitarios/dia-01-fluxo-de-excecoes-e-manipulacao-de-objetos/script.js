@@ -124,8 +124,21 @@ const findPersonByPosition = (position) => {
   }
 };
 
-console.log(findPersonByPosition(3));
-
 const findPeopleByState = (state) => {
-  // seu código aqui
+  let person = [];
+  try {
+    for (let index = 0; index < clients.length; index += 1) {
+      if (state === clients[index].address.state) {
+        person.push(clients[index].name);
+      }
+    }
+    if (person.length === 0) {
+      throw new Error ('Ops, nenhuma pessoa mora nesse estado, tente outro');
+    }
+    return person;
+  } catch (error) {
+    return error.message;
+  }
 };
+
+console.log(findPeopleByState('SP'));
