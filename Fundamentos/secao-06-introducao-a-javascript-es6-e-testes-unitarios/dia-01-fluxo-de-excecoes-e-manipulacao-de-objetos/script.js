@@ -112,11 +112,19 @@ const findPersonByName = (name) => {
     }
 };
 
-console.log(findPersonByName('Ana Santos'));
-
 const findPersonByPosition = (position) => {
-  // seu código aqui
+  try {
+    const person = clients[position];
+    if (!position) {
+      throw new Error('Posição inválida, tente novamente');
+    }
+    return `Cliente: ${person.name}. email: ${person.email}`
+  } catch (error) {
+    return error.message;
+  }
 };
+
+console.log(findPersonByPosition(3));
 
 const findPeopleByState = (state) => {
   // seu código aqui
