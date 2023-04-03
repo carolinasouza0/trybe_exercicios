@@ -61,14 +61,14 @@ const books = [
   },
 ];
 
-const expectedResult = 'Duna';
-const smallerName = () => {
+const getNamedBook = () => {
   let nameBook;
-  books.forEach((book) => {
-    if (!nameBook || book.name.length < nameBook.length) {
-      nameBook = book.name;
+  books.some((book) => {
+    if (!nameBook || book.name.length === 26) {
+      nameBook = book;
     }
   })
   return nameBook;
 }
-console.log(smallerName()); 
+
+console.log(getNamedBook());
