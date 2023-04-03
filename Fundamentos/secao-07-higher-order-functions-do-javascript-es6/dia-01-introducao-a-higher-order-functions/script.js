@@ -1,15 +1,11 @@
-const setEmail = (fullName) => {
-  let mail = fullName.toLowerCase().replace(' ', '_');
-  return `{${fullName}, email: ${mail}@trybe.com`;
+const lotery = (number, callback) => {
+  let randomNumber = Math.floor(Math.random() * 5);
+  return callback(number, randomNumber) ? 'Parabéns, você ganhou' : 'Tente novamente';
 }
 
-const newEmployees = (callback) => {
-  const employees = {
-    id1: callback('Pedro Guerra'), // Nome: Pedro Guerra -> Chame sua função passando o nome Pedro Guerra como parâmetro, substituindo as aspas
-    id2: callback('Luiza Drumond'), // Nome: Luiza Drumond -> Chame sua função passando o nome Luiza Drumond como parâmetro, substituindo as aspas
-    id3: callback('Carla Paiva'), // Nome: Carla Paiva -> Chame sua função passando o nome Carla Paiva como parâmetro, substituindo as aspas
-  }
-  return employees;
-};
 
-console.log(newEmployees(setEmail));
+const checkNumber = (number, random) => {
+  return number === random ? true : false;
+  }
+
+  console.log(lotery(2,checkNumber));
