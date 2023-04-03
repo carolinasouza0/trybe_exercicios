@@ -61,10 +61,10 @@ const books = [
   },
 ];
 
-const everyoneWasBornOnSecXX = () => {
-  const authorBirthday = books.every((book) => book.author.birthYear >= 1901 && book.author.birthYear <= 2000);
-  
+const someBookWasReleaseOnThe80s = () => {
+  const authorBirthday = books.some((book) => book.releaseYear >= 1980 && book.releaseYear <= 1989);
+
   return authorBirthday;
 }
 
-console.log(everyoneWasBornOnSecXX());
+console.log(someBookWasReleaseOnThe80s());
