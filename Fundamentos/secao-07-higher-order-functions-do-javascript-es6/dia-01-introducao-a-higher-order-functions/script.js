@@ -61,14 +61,10 @@ const books = [
   },
 ];
 
-const getNamedBook = () => {
-  let nameBook;
-  books.some((book) => {
-    if (!nameBook || book.name.length === 26) {
-      nameBook = book;
-    }
-  })
-  return nameBook;
+const everyoneWasBornOnSecXX = () => {
+  const authorBirthday = books.every((book) => book.author.birthYear >= 1901 && book.author.birthYear <= 2000);
+  
+  return authorBirthday;
 }
 
-console.log(getNamedBook());
+console.log(everyoneWasBornOnSecXX());
