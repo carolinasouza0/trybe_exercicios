@@ -61,10 +61,8 @@ const books = [
   },
 ];
 
-const someBookWasReleaseOnThe80s = () => {
-  const authorBirthday = books.some((book) => book.releaseYear >= 1980 && book.releaseYear <= 1989);
-
-  return authorBirthday;
+const authorUnique = () => {
+  return books.every((book) => !books.some((bookSome) => (bookSome.author.birthYear === book.author.birthYear) && (bookSome.author.name !== book.author.name)));
 }
 
-console.log(someBookWasReleaseOnThe80s());
+console.log(authorUnique());
