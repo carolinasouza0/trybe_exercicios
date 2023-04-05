@@ -69,3 +69,6 @@ const countries = [
 const getPopulation = () => countries.reduce((acc, country) => (acc + country.population), 0);
 
 const getTotalArea = () => countries.reduce((acc, country) => (acc + country.area), 0);
+
+const longestName = () => countries.reduce((acc, country) => acc.name.length > country.name.length ? acc : country);
+
