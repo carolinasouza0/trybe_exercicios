@@ -1,83 +1,72 @@
-const estudantes = [
+// Fonte: <https://restcountries.com/v2/all>
+const countries = [
   {
-    nome: 'Jorge',
-    sobrenome: 'Silva',
-    idade: 14,
-    turno: 'Manhã',
-    materias: [
-      { name: 'Matemática', nota: 67 },
-      { name: 'Português', nota: 79 },
-      { name: 'Química', nota: 70 },
-      { name: 'Biologia', nota: 65 },
-    ],
+    name: 'Afghanistan',
+    region: 'Asia',
+    currencies: [{ code: 'AFN', name: 'Afghan afghani' }],
+    capital: 'Kabul',
+    population: 40218234,
+    area: 652230
   },
   {
-    nome: 'Mario',
-    sobrenome: 'Ferreira',
-    idade: 15,
-    turno: 'Tarde',
-    materias: [
-      { name: 'Matemática', nota: 59 },
-      { name: 'Português', nota: 80 },
-      { name: 'Química', nota: 78 },
-      { name: 'Biologia', nota: 92 },
-    ],
+    name: 'Åland Islands',
+    region: 'Europe',
+    currencies: [{ code: 'EUR', name: 'Euro' }],
+    capital: 'Mariehamn',
+    population: 28875,
+    area: 1580
   },
   {
-    nome: 'Jorge',
-    sobrenome: 'Santos',
-    idade: 15,
-    turno: 'Manhã',
-    materias: [
-      { name: 'Matemática', nota: 76 },
-      { name: 'Português', nota: 90 },
-      { name: 'Química', nota: 70 },
-      { name: 'Biologia', nota: 80 },
-    ],
+    name: 'Albania',
+    region: 'Europe',
+    currencies: [{ code: 'ALL', name: 'Albanian lek' }],
+    capital: 'Tirana',
+    population: 2837743,
+    area: 28748
   },
   {
-    nome: 'Maria',
-    sobrenome: 'Silveira',
-    idade: 14,
-    turno: 'Manhã',
-    materias: [
-      { name: 'Matemática', nota: 91 },
-      { name: 'Português', nota: 85 },
-      { name: 'Química', nota: 92 },
-      { name: 'Biologia', nota: 90 },
-    ],
+    name: 'Algeria',
+    region: 'Africa',
+    currencies: [{ code: 'DZD', name: 'Algerian dinar' }],
+    capital: 'Algiers',
+    population: 44700000,
+    area: 2381741
   },
   {
-    nome: 'Natalia',
-    sobrenome: 'Castro',
-    idade: 14,
-    turno: 'Manhã',
-    materias: [
-      { name: 'Matemática', nota: 70 },
-      { name: 'Português', nota: 70 },
-      { name: 'Química', nota: 60 },
-      { name: 'Biologia', nota: 50 },
-    ],
+    name: 'American Samoa',
+    region: 'Oceania',
+    currencies: [{ code: 'USD', name: 'United States Dollar' }],
+    capital: 'Pago Pago',
+    population: 55197,
+    area: 199
   },
   {
-    nome: 'Wilson',
-    sobrenome: 'Martins',
-    idade: 14,
-    turno: 'Manhã',
-    materias: [
-      { name: 'Matemática', nota: 80 },
-      { name: 'Português', nota: 82 },
-      { name: 'Química', nota: 79 },
-      { name: 'Biologia', nota: 75 },
-    ],
+    name: 'Andorra',
+    region: 'Europe',
+    currencies: [{ code: 'EUR', name: 'Euro' }],
+    capital: 'Andorra la Vella',
+    population: 77265,
+    area: 468
   },
+  {
+    name: 'Angola',
+    region: 'Africa',
+    currencies: [{ code: 'AOA', name: 'Angolan kwanza' }],
+    capital: 'Luanda',
+    population: 32866268,
+    area: 1246700
+  },
+  {
+    name: 'Anguilla',
+    region: 'Americas',
+    currencies: [{ code: 'XCD', name: 'East Caribbean dollar' }],
+    capital: 'The Valley',
+    population: 13452,
+    area: 91
+  }
 ];
 
-// const betterGrades = (acc, curr) => (acc.nota > curr.nota ? acc : curr);
+const expectedResult = 120797034;
+const getPopulation = () => countries.reduce((acc, country) => (acc + country.population), 0);
 
-const biggestGrade = () => estudantes.map((estudante) => ({
-  name: estudante.nome,
-  materia: estudante.materias.reduce((acc, curr) => (acc.nota > curr.nota ? acc : curr)).name,
-}));
-
-console.log(biggestGrade());
+console.log(getPopulation());
