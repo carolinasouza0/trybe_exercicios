@@ -71,3 +71,7 @@ const reduceNames = () => books.reduce ((acc, book, index) => {
 const averageAge = () => {
   return books.reduce((acc, book) => acc + (book.releaseYear - book.author.birthYear), 0) / books.length;
 }
+
+const longestNamedBook = () => books.reduce((acc, book) => acc.name.length > book.name.length ? acc : book);
+
+console.log(longestNamedBook());
