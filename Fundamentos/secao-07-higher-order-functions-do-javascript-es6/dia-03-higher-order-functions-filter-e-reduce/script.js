@@ -68,4 +68,6 @@ const reduceNames = () => books.reduce ((acc, book, index) => {
   return `${acc}${book.author.name}, `;
 }, '');
 
-console.log(reduceNames());
+const averageAge = () => {
+  return books.reduce((acc, book) => acc + (book.releaseYear - book.author.birthYear), 0) / books.length;
+}
