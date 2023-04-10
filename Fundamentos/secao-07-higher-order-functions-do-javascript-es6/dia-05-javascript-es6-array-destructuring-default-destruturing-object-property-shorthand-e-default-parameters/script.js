@@ -1,9 +1,8 @@
-const palio = ['Palio', 'Fiat', 2019];
-const shelbyCobra = ['Shelby Cobra', 'Ford', 1963];
-const chiron = ['Chiron', 'Bugatti', 2016];
+// escreva greet abaixo
 
-// escreva toObject abaixo
+const greet = (person, greeting = 'Hi') => `${greeting} ${person}`;
 
-const toObject = ([car, brand, year]) => ({ car, brand, year });
-
-console.log(toObject(['Palio', 'Fiat', 2019]));
+// Retornos esperados:
+console.log(greet('John')); // 'Hi John'
+console.log(greet('John', 'Good morning')); // 'Good morning John'
+console.log(greet('Isabela', 'Oi')); // 'Oi Isabela'
