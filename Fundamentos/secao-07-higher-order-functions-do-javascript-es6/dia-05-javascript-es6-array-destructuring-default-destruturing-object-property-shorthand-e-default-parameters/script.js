@@ -1,8 +1,9 @@
-const myList = [5, 2, 3];
+const palio = ['Palio', 'Fiat', 2019];
+const shelbyCobra = ['Shelby Cobra', 'Ford', 1963];
+const chiron = ['Chiron', 'Bugatti', 2016];
 
-// escreva swap abaixo
-const swap = (array) => {
-  return [array[0], array[1], array[2]] = [array[2], array[1], array[0]];
-};
+// escreva toObject abaixo
 
-console.log(swap(myList));
+const toObject = ([car, brand, year]) => ({ car, brand, year });
+
+console.log(toObject(['Palio', 'Fiat', 2019]));
