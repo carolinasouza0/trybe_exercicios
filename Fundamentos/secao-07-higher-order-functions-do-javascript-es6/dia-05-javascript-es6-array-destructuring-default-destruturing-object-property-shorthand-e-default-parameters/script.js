@@ -1,8 +1,16 @@
-// escreva greet abaixo
+const student1 = {
+  name: `Claudia`,
+  lastName: `Farias`,
+  age: 23,
+}
 
-const greet = (person, greeting = 'Hi') => `${greeting} ${person}`;
+const student2 = {
+  name: `Vitor`,
+  age: 20,
+}
 
-// Retornos esperados:
-console.log(greet('John')); // 'Hi John'
-console.log(greet('John', 'Good morning')); // 'Good morning John'
-console.log(greet('Isabela', 'Oi')); // 'Oi Isabela'
+// escreva 'getLastName' abaixo para receber os objetos e retornar sua propriedade `lastName`
+const getLastName = ({ lastName = 'lastName não preenchido' } ) => lastName;
+
+console.log(getLastName(student1));
+console.log(getLastName(student2));
