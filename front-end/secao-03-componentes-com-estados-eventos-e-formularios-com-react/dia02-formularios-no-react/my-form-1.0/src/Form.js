@@ -1,4 +1,6 @@
 import { Component } from "react";
+import Places from "./Places";
+import DreamTravel from "./DreamTravel";
 
 class Form extends Component {
   state = {
@@ -6,6 +8,22 @@ class Form extends Component {
     places: '',
     travelAlone: false,
     dreamTravel: '',
+    formularioComErros: true,
+  }
+
+  handleErrors = () => {
+    const { name, places, travelAlone, dreamTravel } = this.state;
+    const condition = [
+      !name.length,
+      !places.length, 
+      !travelAlone,
+      (dreamTravel.length > 500)
+    ]
+    const errosNoFormulario = condition.some((error) => error === true);
+
+    this.setState(() => ({
+      formularioComErros: errosNoFormulario,
+    }))
   }
 
   handleChange = ({ target }) => {
@@ -14,7 +32,7 @@ class Form extends Component {
 
     this.setState(() => ({
         [name]: value,
-    }))
+    }), this.handleErrors)
   }
 
   render () {
@@ -26,36 +44,25 @@ class Form extends Component {
             Nome: <input value={this.state.name} name="name" onChange={this.handleChange} />
           </label>
           <hr />
-          <label> Dentre as opções, para qual lugar você gostaria de viajar?
-            <select 
-              value={this.state.places} 
-              name="places" 
-              onChange={this.handleChange}
-            >
-              <option value="frança">França</option>
-              <option value="inglaterra">Inglaterra</option>
-              <option selected value="africa">África</option>
-              <option value="holanda">Holanda</option>
-              <option value="vietna">Vietnã</option>
-            </select>
-          </label>
-          <hr />
-          <p>
-            Você faria uma viagem à um desses países sozinha? 
-            <label>
-              Checkbox: 
-            <input 
-              value={this.state.travelAlone}
-              type="checkbox" 
-              name="travelAlone" 
-              onChange={this.handleChange} 
-            />
-            </label>
-          </p>
-          <hr />
-          <label>
-            Nos conte, em poucas linhas, qual sua viagem dos sonhos?
-          <textarea value={this.state.dreamTravel} name="dreamTravel" onChange={this.handleChange} />
+          <fieldset>
+              <Places value={this.state.places} handleChange={this.handleChange} />
+            <hr />
+            <p>
+              Você faria uma viagem à um desses países sozinha? 
+              <label> 
+                <input 
+                  value={this.state.travelAlone}
+                  type="checkbox" 
+                  name="travelAlone" 
+                  onChange={this.handleChange} 
+                />
+              </label>
+            </p>
+            <hr />
+            <DreamTravel value={this.state.dreamTravel} handleChange={this.handleChange} />
+          </fieldset>
+        <label>
+          <input type="file" />
         </label>
         </form>
       </div>
