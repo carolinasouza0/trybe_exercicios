@@ -3,25 +3,35 @@ import { Component } from "react";
 class Form extends Component {
   state = {
     name: '',
+    places: '',
+    travelAlone: false,
+    dreamTravel: '',
   }
 
-  handleName = (event) => {
+  handleChange = ({ target }) => {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
     this.setState(() => ({
-        name: event.target.value,
+        [name]: value,
     }))
   }
-  
+
   render () {
     return (
       <div>
         <h1>Meu primeiro formulário React</h1>
         <form>
           <label>
-            Nome: <input value={this.state.name} name="nome" onChange={ this.handleName } />
+            Nome: <input value={this.state.name} name="name" onChange={this.handleChange} />
           </label>
           <hr />
           <label> Dentre as opções, para qual lugar você gostaria de viajar?
-            <select>
+            <select 
+              value={this.state.places} 
+              name="places" 
+              onChange={this.handleChange}
+            >
               <option value="frança">França</option>
               <option value="inglaterra">Inglaterra</option>
               <option selected value="africa">África</option>
@@ -31,24 +41,21 @@ class Form extends Component {
           </label>
           <hr />
           <p>
-            Das opções abaixo, qual o meio de transporte que você optaria para viajar dentro do país?
-            <label> 
-            <input type="radio" name="myRadio" value="carro" />
-              Carro
-            </label>
+            Você faria uma viagem à um desses países sozinha? 
             <label>
-              <input type="radio" name="myRadio" value="metro" />
-              Metrô
-            </label>
-            <label>
-              <input type="radio" name="myRadio" value="onibus" />
-              Ônibus
+              Checkbox: 
+            <input 
+              value={this.state.travelAlone}
+              type="checkbox" 
+              name="travelAlone" 
+              onChange={this.handleChange} 
+            />
             </label>
           </p>
           <hr />
           <label>
             Nos conte, em poucas linhas, qual sua viagem dos sonhos?
-          <textarea value='' />
+          <textarea value={this.state.dreamTravel} name="dreamTravel" onChange={this.handleChange} />
         </label>
         </form>
       </div>
