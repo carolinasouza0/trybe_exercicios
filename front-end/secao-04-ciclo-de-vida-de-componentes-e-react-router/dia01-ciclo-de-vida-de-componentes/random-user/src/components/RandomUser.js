@@ -3,8 +3,8 @@ import User from "./User";
 
 class RandomUser extends Component {
   state = {
-    user: [],
-    loading: true,
+    results: [],
+    loading: true
   }
 
   fetchRandomUser = async () => {
@@ -13,44 +13,42 @@ class RandomUser extends Component {
       async () => {
         const response = await fetch('https://api.randomuser.me/');
         const data = await response.json();
-        console.log (data.results[0].dob.age);
+        const results = data.results;
         this.setState({
           loading: false,
-          user: data.results,
-        })
-    })
+          results
+        });
+    });
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.fetchRandomUser();
   }
 
-  getUserElements = (user) => {
-    return {
-      name: `${user.name.first} ${user.name.last}`,
-      email: user.email,
-      age: user.dob.age,
-      image: user.picture.thumbnail,
-    };
+  shouldComponentUpdate(nextProps, nextState) {
+    if (!nextState.results.length) {
+      return false;
+    }
+
+    const age = nextState.results[0].dob.age;
+    return age <= 50;
   }
 
-  // ISSO AQUI NÃO FUNCIONA. DEPOIS RESOLVER!!
-  // shouldComponentUpdate(_nextProps, nextState) {
-  //   // console.log(nextState.user[0].dob.age);
-  //   const AGE = 50;
-  //   if (nextState.user[0].dob.age < AGE) return true;
-  // }
-
-
   render() {
-    const { loading, user } = this.state;
-    const loadingElement = <span>Carregando...</span>;
+    const { results, loading } = this.state;
 
-    return (
-      <div>
-       <span>{loading ? loadingElement : <User user={ this.getUserElements(user[0])} />}</span>
-      </div>
-    )
+    if (loading) {
+      return <div>Carregando...</div>;
+    }
+
+    if (!this.shouldComponentUpdate()) {
+      return <div>A idade do usuário é maior que 50.</div>;
+    }
+
+    const { name, email, dob, picture } = results[0];
+    const age = dob.age;
+
+    return <User name={name} email={email} age={age} picture={picture} />;
   }
 }
 
