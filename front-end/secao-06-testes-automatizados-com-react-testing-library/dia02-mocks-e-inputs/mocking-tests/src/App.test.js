@@ -13,8 +13,8 @@ it('fetches a joke', async () => {
   };
 
   // Outra forma de mock do fetch:
-  global.fetch = jest.fn(() => Promise.resolve({
-    json: () => Promise.resolve(joke),
+  global.fetch = jest.fn(async () => ({
+    json: async () => joke
   }));
 
   render(<App />);
