@@ -12,17 +12,14 @@ it('fetches a joke', async () => {
     status: 200,
   };
 
-  jest.spyOn(global, 'fetch');
-  global.fetch.mockResolvedValue({
-    json: jest.fn().mockResolvedValue(joke),
-  });
+  // Outra forma de mock do fetch:
+  global.fetch = jest.fn(() => Promise.resolve({
+    json: () => Promise.resolve(joke),
+  }));
 
   render(<App />);
   const renderedJoke = await screen.findByText('Whiteboards ... are remarkable.');
   expect(renderedJoke).toBeInTheDocument();
   expect(global.fetch).toHaveBeenCalledTimes(1);
-  expect(global.fetch).toHaveBeenCalledWith(
-    'https://icanhazdadjoke.com/',
-    { headers: { Accept: 'application/json' } },
-  );
+  expect(global.fetch).toHaveBeenCalledWith('https://icanhazdadjoke.com/', { headers: { Accept: 'application/json' } });
 });
