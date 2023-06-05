@@ -8,8 +8,7 @@ export const NoMatch = () => <h1>Página não encontrada</h1>;
 export default function App() {
   return (
     <div>
-      <Link to="/">Início</Link>
-      <br />
+     <Link to="/">Início</Link>      <br />
       <Link to="/about">Sobre</Link>
       <Switch>
         <Route exact path="/" component={Home} />
