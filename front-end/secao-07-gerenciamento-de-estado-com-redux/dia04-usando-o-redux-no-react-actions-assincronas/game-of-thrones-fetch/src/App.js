@@ -17,7 +17,7 @@ class App extends Component {
 
   render() {
     const { name } = this.state;
-    const { isFetching, dispatch } = this.props;
+    const { isFetching, dispatch, error } = this.props;
 
     if (isFetching) return <p>Loading...</p>;
 
